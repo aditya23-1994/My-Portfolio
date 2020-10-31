@@ -1,0 +1,49 @@
+.head {
+    margin-top: 4rem;
+    margin-left: 4rem;
+    display: flex;
+    padding-left: 1rem;
+    font-size: 1.62rem;
+    flex-direction: column;
+    color: #333;
+    font-family: 'Lato';
+    position: absolute;
+    flex: 0 0 25%;
+    flex-wrap: wrap;
+}
+
+.head__title {
+    display: block;
+    padding-top: 1.6rem;
+    position: relative;
+    margin-left: 30rem;
+    padding-bottom: 1.6rem;
+    text-align: center; 
+    border-bottom: 4px solid #FF3366;
+    margin-bottom: 3rem;
+}
+
+.head__discription {
+    margin-bottom: 1.6rem;
+    text-transform: capitalize;
+}
+
+.head__paragraph {
+    margin-bottom: 1.6rem;
+    padding-left: 2rem;    
+}
+
+.head__language {
+
+    padding-bottom: 1.6rem;
+}
+
+.head__link {
+    margin-bottom: 1.6rem;
+}
+
+.link {
+    text-decoration: none;
+    margin-left: 1.6rem;
+    color: #7F00FF;
+}
