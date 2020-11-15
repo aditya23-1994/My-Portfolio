@@ -9,6 +9,9 @@ export const Portfolio = ({projects, active}) => {
     <div className= "portfolio-render">
     <div className="sidebar">
     <ul className="side-nav">
+      <li className= "side-nav__item "><Link className="side-nav__link" to={'/'} >
+      <h3>Home</h3></Link></li>
+      
       {projects.map(project => (
         <div className= "side-nav__item" key={project.id}>
           <li><Link  className="side-nav__link" to={`/portfolio/${project.slug}`}>          

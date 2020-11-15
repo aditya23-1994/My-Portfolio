@@ -10,13 +10,14 @@ class App extends React.Component {
     super(props);
     this.state = {
       projects: [],
-      link: "http://localhost:3000/portfolio",
+      link: "https://adityakhatwaapi.herokuapp.com/portfolio",
       resume: [],
+      loading: false,
     }
   }
 
   componentDidMount(){
-    fetch("http://localhost:8080/api/projects/",{
+    fetch("https://adityakhatwaapi.herokuapp.com/api/projects/",{
       method:"GET",
       headers: {
         'Content-Type': 'application/json',
@@ -27,11 +28,12 @@ class App extends React.Component {
       this.setState({projects: data}, () => {
       })
     })
+    .then(this.setState({loading:true}))
     .catch(err=>{
       console.log('error: ', err)
     });
 
-    fetch("http://localhost:8080/api/resume/",{
+    fetch("https://adityakhatwaapi.herokuapp.com/api/resume/",{
       method:"GET",
       headers: {
         'Content-Type': 'application/json',

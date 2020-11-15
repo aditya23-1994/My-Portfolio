@@ -39,7 +39,11 @@ export const Header = (props) => (
     </header>
 )
 
-export  const PortfolioWeb = ({ projects, link }) =>{ return(
+export  const PortfolioWeb = ({ projects, link }) =>{
+    let prod = projects.filter(project => {
+        return project.language !== 'python'
+    })
+    return(
   <div>
   <section className="portfolio">
     <h1 class="portfolio__header">Spotlight</h1>
@@ -49,7 +53,7 @@ export  const PortfolioWeb = ({ projects, link }) =>{ return(
         <h2 className="heading-secondary">Web development Portfolio</h2>
     </div>          
     <div className="row">
-    {projects ? (projects.map(project => (
+    {projects ? (prod.map(project => (
 
         <div key={project.id} >
             <div className="card">
@@ -73,13 +77,16 @@ export  const PortfolioWeb = ({ projects, link }) =>{ return(
     ))) : (<div><h1>Loading...</h1></div>)}
     </div>
 
-    <a href={link} className="btn btn-portfolio-1">Learn more</a>
+    <a href={'/portfolio'} className="btn btn-portfolio-1">Learn more</a>
     
   </section>
-  </div>
+  </div>    
 )};
 
 export const PortfolioPython = ({projects, link}) => {
+    let prod = projects.filter(project => {
+        return project.language === 'python'
+    })
     return (
         <section class="portfolio__python">
             <div class="u-center-text u-margin-bottom-8">
@@ -87,7 +94,7 @@ export const PortfolioPython = ({projects, link}) => {
             </div>
             
             <div className="row">
-            {projects.map(project => (
+            {prod.map(project => (
         
                 <div key={project.id} >
                     <div className="card">
@@ -111,7 +118,7 @@ export const PortfolioPython = ({projects, link}) => {
             ))}
             </div>            
 
-            <a href={link} class="btn btn-portfolio-1">Learn more</a>
+            <a href={'/portfolio'} class="btn btn-portfolio-1">Learn more</a>
             
         </section>
     )

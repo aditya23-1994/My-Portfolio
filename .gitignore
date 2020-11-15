@@ -1,8 +1,13 @@
+
+/20190411_102544.jpg
+
+
+
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
-/.pnp
+.pnp
 .pnp.js
 
 # testing
